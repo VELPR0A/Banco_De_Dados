@@ -20,13 +20,13 @@ O banco de dados `virtual_easy_log` foi projetado para gerenciar as operações 
 Tabela para associar a empresa ao plano.
 
 - **Colunas Principais**:
-  - `Pk_id_Plano`
+  - `id`
 
 ### 🏢 Tb_Empresa
 Tabela para alocar a empresa.
 
 - **Colunas Principais**:
-  - `Pk_id_Empresa`
+  - `id_cnpj`
 
 ### 👨‍💼 Tb_Coordenador
 Tabela para alocar o coordenador.
