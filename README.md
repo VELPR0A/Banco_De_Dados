@@ -6,7 +6,7 @@
 
 ## 💡 Projeto
 
-O banco de dados `virtual_easy_log` foi projetado para gerenciar as operações de uma plataforma de gestão para empresas de motos e restaurante. Este banco de dados cobre funcionalidades essenciais como: Associação das empresas com os planos, registro de empresa, entregador e coordenador, atribuição de pedidos e geração de comandas virtuais.
+O banco de dados `VEL` foi projetado para gerenciar as operações de uma plataforma de gestão para empresas de motos e restaurante. Este banco de dados cobre funcionalidades essenciais como: Associação das empresas com os planos, registro de empresa, entregador e coordenador, atribuição de pedidos e geração de comandas virtuais.
 
 ## 🔧 Tecnologias Utilizadas
 
@@ -20,45 +20,96 @@ O banco de dados `virtual_easy_log` foi projetado para gerenciar as operações 
 Tabela para associar a empresa ao plano.
 
 - **Colunas Principais**:
-  - `id`
+  - `Pk_id`
+  - `nome`
+  - `beneficio`
 
 ### 🏢 Tb_Empresa
 Tabela para alocar a empresa.
 
 - **Colunas Principais**:
-  - `id_cnpj`
+  - `Pk_id_cnpj`
+  - `email`
+  - `senha`
+  - `endereco`
+  - `telefone`
+  - `proprietario`
+  - `Fk_id_plano`
+  - `Fk_faturamento`
+  - `Fk_cpf_coord`
+  - `Fk_cpf`
+  - `Fk_contrato`
 
 ### 👨‍💼 Tb_Coordenador
 Tabela para alocar o coordenador.
 
 - **Colunas Principais**:
-  - `Pk_id_Coordenador`
+  - `Pk_id_cpf`
+  - `nome`
+  - `telefone`
+  - `email`
+  - `senha`
+  - `conta_bancaria`
 
 ### 🛵 Tb_Entregador
 Tabela para alocar o entregador.
 
 - **Colunas Principais**:
-  - `Pk_id_Entregador`
+  - `Pk_id_cpf`
+  - `nome`
+  - `telefone`
+  - `cnh`
+  - `email`
+  - `senha`
+  - `status`
+  - `conta_bancaria`
+  - `turno`
+  - `Fk_id_cnpj`
 
 ### 📈 Tb_Faturamento
 Tabela para alocar o faturamento.
 
 - **Colunas Principais**:
-  - `Pk_id_Faturamento`
+  - `Pk_id`
+  - `despesa`
+  - `ganho`
+  - `data`
+  - `Fk_cnpj_id`
+  - `Fk_id_cpf`
 
 ### 🛒 Tb_Pedido
 Tabela para alocar o pedido.
 
 - **Colunas Principais**:
-  - `Pk_id_Pedido`
+  - `Pk_id`
+  - `nome`
+  - `telefone`
+  - `endereco`
+  - `forma_pagamento`
+  - `idUsuario`
+  - `descricao`
+  - `entregue`
+  - `Fk_id_cpf`
 
 ### 📄 Tb_Contrato
 Tabela para alocar o contrato.
 
 - **Colunas Principais**:
-  - `Pk_id_Faturamento`
+  - `Pk_id`
+  - `caminho_contrato`
+  - `data_criacao`
+  - `Fk_id_plano`
+  - `Fk_id_cnpj`
 
-### Tb_Comanda_entregador
+### 📋 Tb_Comanda
+- **Colunas Principais**:
+  - `Pk_id`
+  - `endereco_entrega`
+  - `informacao_pagamento`
+  - `Fk_id_cpf`
+  - `Fk_id_pedido`
 
-### Tb_Faturamento_empresa
-
+### 📋 Tb_Faturamento_empresa
+- **Colunas Principais**:
+  - `Fk_id_cnpj`
+  - `Fk_id`
