@@ -102,6 +102,7 @@ Tabela para alocar o contrato.
   - `Fk_id_cnpj`
 
 ### 📋 Tb_Comanda
+Tabela para alocar a comanda.
 - **Colunas Principais**:
   - `Pk_id`
   - `endereco_entrega`
@@ -110,6 +111,7 @@ Tabela para alocar o contrato.
   - `Fk_id_pedido`
 
 ### 📋 Tb_Faturamento_empresa
+Tabela para associar a empresa com o faturamento
 - **Colunas Principais**:
   - `Fk_id_cnpj`
   - `Fk_id`
